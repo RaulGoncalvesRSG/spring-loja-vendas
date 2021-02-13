@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Spring MVC e Ajax</title>
+
+	<!-- CSS -->
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"/>
+	<!-- Para autocomplete -->
+  	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"/>
+    <!-- DataTable -->
+    <link rel="stylesheet" href="//cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css"/>
+    <!-- Responsividade com btn de expansão -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.7/css/responsive.dataTables.min.css"/>
+	<!-- css de btn para a dataTable -->
+	<link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.5.2/css/buttons.dataTables.min.css"/>
+</head>
+<body>
+		<!-- Menu -->
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#navbarsExample08" aria-controls="navbarsExample08"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample08">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" th:href="@{/promocao/add}">Adicionar Promoção</a></li>
+                <li class="nav-item"><a class="nav-link" th:href="@{/promocao/list}">Promoções</a></li>
+                <li class="nav-item"><a class="nav-link" th:href="@{/promocao/tabela}">Tabela de Promoções</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+	<!-- a tag main é onde vão ficar os framentos -->
+<main role="main" class="container">
+    <div layout:fragment="corpo">
+        <div>conteudo principal das páginas</div>
+    </div>
+</main>
+
+<!-- JS -->
+<!-- Para trabalhar com a formatação de data -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment-with-locales.min.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+<!-- Para autocomplete -->
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+<script src="//cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+<!-- Responsividade com btn de expansão -->
+<script src="https://cdn.datatables.net/responsive/2.2.7/js/dataTables.responsive.min.js"></script>
+<!-- JS de btn para a dataTable -->
+<script src="https://cdn.datatables.net/buttons/1.5.2/js/dataTables.buttons.min.js"></script>
+
+<!-- DWR AJAX -->
+<script type='text/javascript' th:src=@{/dwr/engine.js}></script>
+<script type='text/javascript' th:src=@{/dwr/interface/DWRAlertaPromocoes.js}></script>
+<script type='text/javascript' th:src=@{/dwr/util.js}></script>
+
+<!-- 	MEUS JS -->
+<script th:replace=":: js"></script>
+</body>
+</html>
